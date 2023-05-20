@@ -3,13 +3,13 @@ module github.com/rofinafiin/websocket-new
 go 1.20
 
 require (
+	github.com/aiteung/musik v0.0.5
 	github.com/gofiber/fiber v1.14.6
 	github.com/gofiber/websocket v0.5.1
 )
 
 require (
 	filippo.io/edwards25519 v1.0.0 // indirect
-	github.com/aiteung/musik v0.0.5 // indirect
 	github.com/andybalholm/brotli v1.0.0 // indirect
 	github.com/fasthttp/websocket v1.4.3-beta.1 // indirect
 	github.com/gofiber/utils v0.0.10 // indirect
