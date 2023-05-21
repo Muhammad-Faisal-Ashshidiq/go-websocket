@@ -12,18 +12,18 @@
 </head>
 <body>
 <div class="container">
-<h1>ChWeKet - Chat Websocket</h1>
+<h1>ChaWeKet - Chat Websocket</h1>
 
-<div class="speech-wrapper">
+<!-- <div class="speech-wrapper">
     <div class="bubble">
       <div class="txt">
         <p class="name"></p>
         <p class="pesan"></p>
-        <!-- <span class="timestamp">10:20 pm</span> -->
+        <span class="timestamp">09:20 sm</span>
       </div>
       <div class="bubble-arrow"></div>
-    </div>
-    <!--  Speech Bubble alternative -->
+    </div> -->
+     <!-- Speech Bubble alternative -->
     <!-- <div class="bubble alt">
       <div class="txt">
         <p class="name alt">+62 857-7108-9755 <span> ~ username</span></p>
@@ -31,12 +31,12 @@
         <span class="timestamp">10:22 pm</span>
       </div>
       <div class="bubble-arrow alt"></div>
-    </div> -->
-  </div>
+    </div>
+  </div> -->
 
 <input type="text" id="username" class="name" placeholder="Username" />
 <input type="text" id="message" class="pesan" placeholder="Message" />
-<button id="kirim" class="btn btn-info">Send</button>
+<button id="send" class="btn btn-info">Send</button>
 </div>
 
 <script>
@@ -49,7 +49,7 @@
             $('#messages').append(content);
         };
 
-        $('#kirim').click(function() {
+        $('#send').click(function() {
             var message = {
                 username: $('#username').val(),
                 content: $('#message').val()
