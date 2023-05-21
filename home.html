@@ -17,8 +17,8 @@
 <div class="speech-wrapper">
     <div class="bubble">
       <div class="txt">
-        <p class="name">{name}</p>
-        <p class="pesan">{pesan}</p>
+        <p class="name"></p>
+        <p class="pesan"></p>
         <!-- <span class="timestamp">10:20 pm</span> -->
       </div>
       <div class="bubble-arrow"></div>
@@ -36,7 +36,7 @@
 
 <input type="text" id="username" class="name" placeholder="Username" />
 <input type="text" id="message" class="pesan" placeholder="Message" />
-<button id="submit" type="button" class="btn btn-info">Send</button>
+<button id="kirim" class="btn btn-info">Send</button>
 </div>
 
 <script>
@@ -49,7 +49,7 @@
             $('#messages').append(content);
         };
 
-        $('#submit').click(function() {
+        $('#kirim').click(function() {
             var message = {
                 username: $('#username').val(),
                 content: $('#message').val()
