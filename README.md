@@ -1,1 +1,1 @@
-# ws-repo
+# go-websocket
