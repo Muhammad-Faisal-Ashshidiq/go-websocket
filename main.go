@@ -109,3 +109,19 @@ func main() {
 
 	log.Fatal(app.Listen(musik.Dangdut()))
 }
+
+
+// import (
+// 	"module"
+// 	"url"
+// 	"log"
+
+// 	"github.com/gofiber/fiber/v2"
+// )
+
+// func main() {
+// 	go module.RunHub()
+// 	site := fiber.New()
+// 	url.Web(site)
+// 	log.Fatal(site.Listen(":3000"))
+// }
