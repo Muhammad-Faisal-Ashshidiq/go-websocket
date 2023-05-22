@@ -78,7 +78,7 @@ func main() {
 
 	app := fiber.New()
 
-	app.Static("/", "./rumah.html")
+	app.Static("/", "github.com/sidiq200/UI-Chaweket/rumah.html")
 
 	app.Get("/ws", websocket.New(func(c *websocket.Conn) {
 		username := c.Query("username")
@@ -106,7 +106,7 @@ func main() {
 	}))
 
 	app.Get("/", func(c *fiber.Ctx) error {
-		return c.SendFile("./rumah.html")
+		return c.SendFile("github.com/sidiq200/UI-Chaweket/rumah.html")
 	})
 
 	port := os.Getenv("PORT")
