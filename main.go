@@ -7,7 +7,7 @@ import (
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/websocket/v2"
-	"github.com/sidiq200/UI-Chaweket"
+	
 )
 
 type Message struct {
