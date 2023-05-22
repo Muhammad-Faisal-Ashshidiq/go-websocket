@@ -105,7 +105,7 @@ func main() {
 	}))
 
 	app.Get("/", func(c *fiber.Ctx) error {
-		return c.SendFile("./public/rumah.html")
+		return c.SendFile("./public/index.html")
 	})
 
 	port := os.Getenv("PORT")
