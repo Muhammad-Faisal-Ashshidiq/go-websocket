@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/aiteung/musik"
+	"os"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/websocket/v2"
 	"log"
@@ -107,21 +107,10 @@ func main() {
 		return c.Render("index.html", nil)
 	})
 
-	log.Fatal(app.Listen(musik.Dangdut()))
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "3000"
+	}
+
+	log.Fatal(app.Listen(":"+ port))
 }
-
-
-// import (
-// 	"module"
-// 	"url"
-// 	"log"
-
-// 	"github.com/gofiber/fiber/v2"
-// )
-
-// func main() {
-// 	go module.RunHub()
-// 	site := fiber.New()
-// 	url.Web(site)
-// 	log.Fatal(site.Listen(":3000"))
-// }
