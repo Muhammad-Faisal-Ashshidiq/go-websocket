@@ -23,7 +23,7 @@
 <form class="col-4">  
     <input class="form-control col-4" type="text" id="username" placeholder="Nama" />
     <input class="form-control col-4" type="text" id="message" placeholder="Pesan" />
-    <button id="kirim" class="btn btn-info">Send</button>
+    <button id="send" class="btn btn-info">Send</button>
 </form>
 </div>
 <script>
@@ -36,7 +36,7 @@
             $('#messages').append(content);
         };
 
-        $('#kirim').click(function() {
+        $('#send').click(function() {
             var message = {
                 username: $('#username').val(),
                 content: $('#message').val()
