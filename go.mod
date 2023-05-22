@@ -1,10 +1,10 @@
-module github.com/sidiq200/go-websocket
+module github.com/harisriyoni3/ws-repo
 
 go 1.20
 
 require (
 	github.com/gofiber/fiber/v2 v2.46.0
-	github.com/gofiber/websocket/v2 v2.2.1
+	github.com/gofiber/websocket/v2 v2.2.0
 )
 
 require (

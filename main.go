@@ -7,7 +7,6 @@ import (
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/websocket/v2"
-	
 )
 
 type Message struct {
@@ -78,7 +77,7 @@ func main() {
 
 	app := fiber.New()
 
-	app.Static("/", "./public/rumah.html")
+	app.Static("/", "./home.html")
 
 	app.Get("/ws", websocket.New(func(c *websocket.Conn) {
 		username := c.Query("username")
@@ -106,7 +105,7 @@ func main() {
 	}))
 
 	app.Get("/", func(c *fiber.Ctx) error {
-		return c.SendFile("./public/rumah.html")
+		return c.SendFile("./home.html")
 	})
 
 	port := os.Getenv("PORT")
