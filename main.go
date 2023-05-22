@@ -2,10 +2,11 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"os"
+
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/websocket/v2"
-	"log"
 )
 
 type Message struct {
@@ -104,7 +105,7 @@ func main() {
 	}))
 
 	app.Get("/", func(c *fiber.Ctx) error {
-		return c.SendFile("rumah.html")
+		return c.SendFile("./rumah.html")
 	})
 
 	port := os.Getenv("PORT")
@@ -112,5 +113,5 @@ func main() {
 		port = "3000"
 	}
 
-	log.Fatal(app.Listen(":"+ port))
+	log.Fatal(app.Listen(":" + port))
 }
