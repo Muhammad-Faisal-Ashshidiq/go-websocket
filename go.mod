@@ -1,4 +1,4 @@
-module github.com/sidiq200/go-websocket
+module github.com/sidiq200/ui-chaweket.git
 
 go 1.20
 
