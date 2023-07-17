@@ -22,103 +22,34 @@
     <hr class="border border-secondary-subtle border-2 opacity-50"> 
     
     <input type="text" id="username" placeholder="Username" class="flex-1 mr-2 p-2 border border-white-400 text-grey rounded" />
+    <input type="text" id="message" placeholder="Message" class="flex-1 mr-2 p-2 border border-white-400 text-grey rounded" />
      <div class="row-cols-3">
         <div id="messages" class="border p-2 mb-2"></div>
     </div>
-    <input type="text" id="message" placeholder="Message" class="flex-1 mr-2 p-2 border border-white-400 text-grey rounded" />
         <button id="send" type="submit" class="py-2 px-4 bg-blue-500 text-white rounded hover:bg-orange-500">Kirim</button>
-   
-        <!-- <div class="form">
-            <form onsubmit="app.doSendMessage(); return false;">
-                <div class="placeholder">
-                    <label>Welcome <b class="username"></b>. silakan ketik apapun di sini:</label>
-                </div>
-                <input class="flex-1 mr-2 p-2 border border-white-400 text-black rounded" type="text"  placeholder="Enter message">
-                <button type="submit" class="py-2 px-4 bg-blue-500 text-black rounded hover:bg-orange-500" >kirim</button>
-            </form>
-        </div> -->
+
 </div>
 <script type="text/javascript">
-    //  $(function() {
-    //         var socket = new WebSocket("wss://sal-websocket-02e789176250.herokuapp.com//ws?username=" + encodeURIComponent($('#username').val()));
+     $(function() {
+            var socket = new WebSocket("wss://sal-websocket-02e789176250.herokuapp.com//ws?username=" + encodeURIComponent($('#username').val()));
 
-    //         socket.onmessage = function(event) {
-    //             var message = JSON.parse(event.data);
-    //             var content = "<strong>" + message.username + ":</strong> " + message.content + "<br />";
-    //             $('#messages').append(content);
-    //         };
+            socket.onmessage = function(event) {
+                var message = JSON.parse(event.data);
+                var content = "<strong>" + message.username + ":</strong> " + message.content + "<br />";
+                $('#messages').append(content);
+            };
 
-    //         $('#send').click(function() {
-    //             var message = {
-    //                 username: $('#username').val(),
-    //                 content: $('#message').val()
-    //             };
-    //             socket.send(JSON.stringify(message));
-    //             $('#message').val('');
-    //         });
-    //     });
+            $('#send').click(function() {
+                var message = {
+                    username: $('#username').val(),
+                    content: $('#message').val()
+                };
+                socket.send(JSON.stringify(message));
+                $('#message').val('');
+            });
+        });
 
-//     var app = {}
-//     app.ws = undefined
-//     app.container = undefined
 
-//     app.init = function () {
-//     if (!(window.WebSocket)) {
-//         alert('Your browser does not support WebSocket')
-//         return
-//     }
-
-//     var name = prompt('Enter your name please:') || "No name"
-//     document.querySelector('.username').innerText = name
-
-//     app.container = document.querySelector('.container')
-
-//     app.ws = new WebSocket("wss://sal-websocket-02e789176250.herokuapp.com///ws?username=" + name)
-
-//     app.ws.onopen = function() {
-//         var message = '<b>me</b>: connected'
-//         app.print(message)
-//     }
-
-//     app.ws.onmessage = function (event) {
-//         var res = JSON.parse(event.data)
-   
-//         var messsage = ''
-//         if (res.Type === 'New User') {
-//             message = 'User <b>' + res.From + '</b>: connected'
-//         } else if (res.Type === 'Leave') {
-//             message = 'User <b>' + res.From + '</b>: disconnected'
-//         } else {
-//             message = '<b>' + res.From + '</b>: ' + res.Message 
-//         }
-   
-//         app.print(message)
-//     }
-
-//     app.ws.onclose = function () {
-//         var message = '<b>me</b>: disconnected'
-//         app.print(message)
-//     }
-
-//     app.print = function (message) {
-//         var el = document.createElement("p")
-//         el.innerHTML = message
-//         app.container.append(el)
-//     }
-
-//     app.doSendMessage = function () {
-//         var messageRaw = document.querySelector('.input-message').value
-//         app.ws.send(JSON.stringify({
-//             Message: messageRaw
-//         }));
-    
-//         var message = '<b>me</b>: ' + messageRaw
-//         app.print(message)
-    
-//         document.querySelector('.input-message').value = ''
-//     }
-// }
-// window.onload = app.init
 </script>
 </body>
 </html>
