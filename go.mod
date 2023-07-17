@@ -1,4 +1,4 @@
-module github.com/sidiq200/ui-chaweket.git
+module github.com/muhammad-faisal-ashshidiq/fro-chaweket.git
 
 go 1.20
 
