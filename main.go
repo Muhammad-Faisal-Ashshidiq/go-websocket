@@ -77,7 +77,7 @@ func main() {
 
 	app := fiber.New()
 
-	app.Static("/", "./") // Serve static files from the root directory
+	app.Static("/", "./")
 
 	app.Get("/ws", websocket.New(func(c *websocket.Conn) {
 		username := c.Query("username")
@@ -105,7 +105,7 @@ func main() {
 	}))
 
 	app.Get("/", func(c *fiber.Ctx) error {
-		return c.SendFile("index.html") // Send the index.html file
+		return c.SendFile("index.html")
 	})
 
 	port := os.Getenv("PORT")
