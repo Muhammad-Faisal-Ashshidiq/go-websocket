@@ -77,7 +77,7 @@ func main() {
 
 	app := fiber.New()
 
-	app.Static("/", "./")
+	app.Static("/", "./index.html")
 
 	app.Get("/ws", websocket.New(func(c *websocket.Conn) {
 		username := c.Query("username")
