@@ -1,4 +1,4 @@
-module github.com/muhammad-faisal-ashshidiq/fro-chaweket
+module github.com/muhammad-faisal-ashshidiq/go-websoket
 
 go 1.20
 
