@@ -1,4 +1,4 @@
-module github.com/muhammad-faisal-ashshidiq/go-websoket
+module github.com/muhammad-faisal-ashshidiq/go-websocket
 
 go 1.20
 
